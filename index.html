@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="index.css">
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="stackedAreaChartviz.js"></script>
+
+
+<!--Barchart-->
+<script src = "barchartviz.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="http://d3js.org/d3.v3.js"></script>
+</head>
+<body>
+<h1>Narrative Visualization of housing prices (90th percentile) by Country and English region,Great Britain</h1>
+
+<div class="tab">
+	<button class="tablinks" onclick="openVisualization(event, 'Overview')">About Visualization</button>
+	<button class="tablinks" onclick="openVisualization(event, 'AreaChart')"> Area Chart Visualization</button>
+	<button class="tablinks" onclick="window.location.href='barchart.html';">Bar Chart Vizualization</button>
+</div>
+
+<div id="Overview" class="tabcontent">
+   <ul>
+      <li>
+         About this vizualization
+         <p>This is a vizualization about that answers housing affordability by displaying mean housing prices chose from the 90th percentile for regions and countries in the United kingdom.
+            This narrative consists of an area chart and bar chart. Both in D3 js HTML and styled with CSS.
+         
+         </p>
+      </li>
+    
+      <li>
+         Use the buttons above to check on switch through the vizualization.
+         <p>
+         </p>
+      </li>
+   </ul>
+</div>
+
+<div id="AreaChart" class="tabcontent">
+  <div id="tooltip"></div>
+	<p>This is an overview of house price deciles (90th percentile) from the period March 2011 to March 2021. London has higher prices overall. The North East region and Wales show the 
+      lowest prices over time. There is a noticeable increase in each region and country during this period of time. 
+	</p>
+</div>
+
+
+
+   <div id="BarChart"  class="tabcontent">
+      <div style="padding-right: 140px; font-size: 20px; font-weight: bold;color:#ffffff">Housing Prices <br></div>
+      <div id="tooltip"></div>
+      <svg id="barchart1" width="800" height="500"></svg>
+      <div id="controls"></div>
+      <div id="controls2"></div>
+   </div>
+
+
+<script>
+function openVisualization(evt, visName) {
+    var i, tabcontent, tablinks;
+	d3.select("svg").remove();
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+    document.getElementById(visName).style.display = "block";
+	if(evt!==0)
+		evt.currentTarget.className += " active";
+		
+	if(visName==='BarChart')
+   chart1.display();
+	if(visName==='AreaChart')
+		areaChart.display();
+	if(visName==='Overview')
+		tablinks[0].className += " active";
+}
+openVisualization(0,'Overview');
+</script>
+
+</body>
+</html> 

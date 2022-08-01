@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="index.css">
+		<script src="https://d3js.org/d3.v4.min.js"></script>
+		<script src="http://d3js.org/d3.v3.js"></script>	
+	</head>			
+<body>
+
+<h1>Narrative Visualization of housing prices (90th percentile) by Country and English region,Great Britain</h1>
+
+<div class="section" style="width:900px; height:400px;  padding: 0px 3px 0;">
+	<div class="tab">
+		<button class="tablinks"  onclick="window.location.href='index.html';">Home</button>
+		<button class="tablinks"  onclick="window.location.href='index.html';">About Visualization</button>
+	</div>
+	<div id="AreaChart" class="tabcontent">
+		<p>The barchart below shows the average housing prices. London has the highest price. Click the button below to sort Regions in ascending or descending order as desired. North East 
+			has the lowest price over the 2011 to 2021 period. 
+			Hover over the bars to view the exact mean price for each region. 
+		</p>
+  </div>
+
+	<div class="heading" style="float: right; width: 70%">
+					
+					<div id="tooltip"></div>
+					<svg id="barchart1" width="800" height="400"></svg>
+					<div id="controls" ></div>
+					<div id="controls2" > </div>
+					
+					<div class="tab">
+					<p>Data used obtained from UK office of national statistics <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/housing/datasets/housingpurchaseaffordabilityingreatbritain" target="_blank">Here</a></p>
+				
+					</div>
+	</div>
+</div>
+
+	
+		<!--Barchart-->
+		<script src = "barchartviz.js"></script>
+				
+	</body>
+</html>
