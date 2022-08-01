@@ -4,13 +4,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" type="text/css" href="index.css">
 <script src="https://d3js.org/d3.v3.min.js"></script>
-<script src="stackedAreaChart.js"></script>
+<script src="scripts/js/stackedAreaChart.js"></script>
 
-
-<!--Barchart-->
-<script src = "barchartviz.js"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="http://d3js.org/d3.v3.js"></script>
 </head>
 <body>
 <h1>Narrative Visualization of housing prices (90th percentile) by Country and English region,Great Britain</h1>
@@ -75,7 +70,7 @@ function openVisualization(evt, visName) {
 		evt.currentTarget.className += " active";
 		
 	if(visName==='BarChart')
-   chart1.display();
+           chart1.display();
 	if(visName==='AreaChart')
 		areaChart.display();
 	if(visName==='Overview')
